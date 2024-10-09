@@ -1,0 +1,11 @@
+Item_ID,Category,Item_Name,Color,Style,Occasion,Gender,Matching_Items,Matching_Colors
+1,Shoes,Running Shoes,Red,Sporty,Gym,Unisex,"Jogger Pants, Shorts","Black, Grey, White"
+2,Trousers,Slim-fit Jeans,Blue,Casual,Casual,Men,"T-shirts, Sneakers","White, Grey"
+3,Skirt,Maxi Skirt,Black,Casual,Casual,Women,"Blouses, Flats","White, Beige, Red"
+4,Shoes,High Heels,Nude,Formal,Office,Women,"Dresses, Skirts","Black, White, Navy"
+5,Trousers,Jogger Pants,Grey,Sporty,Gym,Unisex,"Hoodies, Sneakers","Black, White, Red"
+6,Jacket,Leather Jacket,Black,Casual,Night Out,Unisex,"Trousers, Boots","White, Red, Grey"
+7,Dress,Cocktail Dress,Pink,Formal,Party,Women,"Heels, Jackets","White, Black"
+8,Shoes,Sneakers,White,Sporty,Casual,Unisex,"Trousers, Casual Jackets","Grey, Black, Blue"
+9,Trousers,Chinos,Beige,Casual,Casual,Men,"Shirts, Loafers","White, Navy"
+10,Blouse,Silk Blouse,Green,Formal,Office,Women,"Pants, Skirts","Black, White"
