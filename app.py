@@ -74,14 +74,24 @@ if st.button("Predict Fashion Item"):
         # Get the top 3 most similar items
         top_indices = np.argsort(similarities[0])[-3:][::-1]
         top_items = data_imputed.iloc[top_indices]
-
         # Format the results in a human-friendly form
         recommendations = []
+        
+        user_style = user_data['Style'].iloc[0]
+        user_gender = user_data['Gender'].iloc[0]
+        
         for index, item in top_items.iterrows():
-            rec = f"When going to {data.iloc[index,5]} occasion, {item['Item_Name']}  with color {item['Color']}, for the style {item['Style']} can be worn with the following Matching items({data.iloc[index,7]}) having these respective colors ( {data.iloc[index,8]})) alternatively;"
-            recommendations.append(rec)
-
-        # Display the top 3 recommendations
-        st.success(f"I advise you to dress in the following way:\n1. {recommendations[0]}\n2. {recommendations[1]}\n3. {recommendations[2]}")
+            rec = f"When going to an occasion which is {user_style}, {item['Item_Name']} with color {item['Color']}, for the style {item['Style']} can be worn with the following Matching items({data.iloc[index,7]}) having these respective colors ( {data.iloc[index,8]})) for gender {data.iloc[index,6]}."
+            
+            # Append recommendation based on style and gender match
+            if item['Style'] == user_style and item['Gender'] == user_gender:
+                recommendations.append(rec)
+        
+        # Check if any recommendations were made
+        if recommendations:
+            st.success(f"I advise you to dress in the following way:\n" + "\n".join([f"{i+1}. {rec}" for i, rec in enumerate(recommendations)]))
+        else:
+            st.success("There are no matching recommendations.")
+            
     except ValueError as e:
         st.error(str(e))
